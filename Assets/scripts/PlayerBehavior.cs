@@ -37,8 +37,11 @@ public class PlayerBehavior : MonoBehaviour
 
         rb.AddForce(movement * Time.deltaTime * movementSpeed, ForceMode.Impulse);
     }
+    
+    // CoinObtention and CoinText
     private void OnTriggerEnter(Collider other)
     {
+        // Coin Obtention
         if (other.CompareTag("CoinItem"))
         {
             totalCoins = totalCoins + valorCoinItem;
@@ -50,6 +53,7 @@ public class PlayerBehavior : MonoBehaviour
             obtainedSpecialCoins = obtainedSpecialCoins + 1;
         }
 
+        // Coin Text
         if (other.tag.Contains("Coin"))
         {
             coinsText.text = "Coins: " + totalCoins.ToString();
