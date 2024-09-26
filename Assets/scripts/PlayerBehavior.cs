@@ -43,20 +43,11 @@ public class PlayerBehavior : MonoBehaviour
         {
             totalCoins = totalCoins + valorCoinItem;
             obtainedCoins = obtainedCoins + 1;
-            if (totalCoins == 1)
-            {
-                print("He tocado " + totalCoins + " moneda.");
-            }
-            else
-            {
-                print("He tocado " + totalCoins + " monedas.");
-            }
         }
         else if (other.CompareTag("SpecialCoinItem"))
         {
             totalCoins = totalCoins + valorSpecialCoinItem;
             obtainedSpecialCoins = obtainedSpecialCoins + 1;
-            print("He tocado " + totalCoins + " monedas.");
         }
 
         if (other.tag.Contains("Coin"))
