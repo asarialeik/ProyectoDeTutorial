@@ -2313,6 +2313,7 @@ MonoBehaviour:
   coinsText: {fileID: 1899238016}
   normalCoinsText: {fileID: 1395720726}
   specialCoinsText: {fileID: 390007319}
+  coinSFX: {fileID: 8300000, guid: 6d5a894937648754587721516bce14e1, type: 3}
 --- !u!1001 &5964362444807226147
 PrefabInstance:
   m_ObjectHideFlags: 0

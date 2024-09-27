@@ -16,6 +16,8 @@ public class PlayerBehavior : MonoBehaviour
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI normalCoinsText;
     public TextMeshProUGUI specialCoinsText;
+    public AudioClip coinSFX;
+    public AudioClip specialCoinSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -41,16 +43,18 @@ public class PlayerBehavior : MonoBehaviour
     // CoinObtention and CoinText
     private void OnTriggerEnter(Collider other)
     {
-        // Coin Obtention
+        // Coin Obtention & Coin Music
         if (other.CompareTag("CoinItem"))
         {
             totalCoins = totalCoins + valorCoinItem;
             obtainedCoins = obtainedCoins + 1;
+            AudioSource.PlayClipAtPoint(coinSFX, transform.position);
         }
         else if (other.CompareTag("SpecialCoinItem"))
         {
             totalCoins = totalCoins + valorSpecialCoinItem;
             obtainedSpecialCoins = obtainedSpecialCoins + 1;
+            AudioSource.PlayClipAtPoint(specialCoinSFX, transform.position);
         }
 
         // Coin Text
